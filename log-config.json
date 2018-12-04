@@ -1,0 +1,25 @@
+{
+    "appenders": {
+        "system": {
+            "type": "file",
+            "filename": "log/system.log"
+        },
+        "probe": {
+            "type": "file",
+            "filename": "log/probe.log",
+            "maxLogSize": 20480,
+            "backups": 3,
+            "layout": {
+                "type": "pattern",
+                "pattern": "%m"
+            }
+        },
+        "console": {
+            "type": "console"
+        }
+    },
+    "categories": {
+        "default": {"appenders":["system","console"], "level": "debug"},
+        "probe": {"appenders": ["probe"], "level": "all"}
+    }
+  }
